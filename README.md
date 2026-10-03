@@ -117,3 +117,7 @@ Place the XML file in `/riivolution/` on your SD card or USB drive.
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
+
+### Modded images
+
+The disc patcher identifies the executable from its patch sites, so mods with the same ID4 are supported even when the last two ID characters change. The original disc ID and filename are preserved. Mods that change required patch sites may be incompatible.
