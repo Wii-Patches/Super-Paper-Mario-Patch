@@ -41,18 +41,9 @@ class App(BASE):
         self.busy = False
 
         try:
-            try:
-                from PIL import Image as _PImage, ImageTk as _PITk
-                _src = _PImage.open(asset('logo.png')).convert('RGBA')
-                _target_w = 400
-                _scale = _target_w / _src.width
-                _target_h = max(1, round(_src.height * _scale))
-                _src = _src.resize((_target_w, _target_h), _PImage.LANCZOS)
-                self.logo = _PITk.PhotoImage(_src)
-            except ImportError:
-                _raw = tk.PhotoImage(file=asset('logo.png'))
-                _factor = max(1, _raw.width() // 400)
-                self.logo = _raw.subsample(_factor, _factor)
+            img = tk.PhotoImage(file=asset('logo.png'))
+            factor = max(1, img.width() // 360)
+            self.logo = img.subsample(factor, factor)
             tk.Label(self, image=self.logo).pack(pady=(10, 0))
         except Exception:
             pass

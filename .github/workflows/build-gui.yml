@@ -48,7 +48,7 @@ jobs:
           python -c "import tkinter; print('tkinter ok')"
 
       - name: Install PyInstaller
-        run: pip install pyinstaller tkinterdnd2 pillow
+        run: pip install pyinstaller tkinterdnd2
 
       - name: Fetch and stage wit (macOS)
         if: matrix.target == 'macos-universal'
