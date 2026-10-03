@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.venv/
+env/
+
+# Build artifacts
+build/
+dist/
+pyinst_dist/
+*.egg-info/
+*.o
+*.elf
+*.bin
+
+# Backups and temporaries
+*.bak
+*.tmp
+*~
+
+# OS artifacts
+.DS_Store
+Thumbs.db
