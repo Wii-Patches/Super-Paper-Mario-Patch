@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Check the patch data against real, retail main.dol files.
 
-    SPM_DOLS=<dir with R8PE01.dol R8PP01.dol R8PJ01.dol R8PK01.dol> python3 tools/verify.py
+    SPM_DOLS=<dir holding one <key>.dol per release, keys as in regions.py> python3 tools/verify.py
 
 For every region and every feature combination:
   * every site holds the retail bytes before patching

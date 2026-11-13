@@ -23,25 +23,14 @@ from regions import REGIONS
 
 DOLS_DIR = sys.argv[1] if len(sys.argv) > 1 else os.environ.get('SPM_DOLS', '.')
 
-DOL_PATHS = {
-    'R8PE01': os.path.join(DOLS_DIR, 'extracted_spm_usa2', 'sys', 'main.dol'),
-    'R8PP01': os.path.join(DOLS_DIR, 'extracted_spm_pal1', 'sys', 'main.dol'),
-    'R8PJ01': os.path.join(DOLS_DIR, 'extracted_spm_jpn1', 'sys', 'main.dol'),
-    'R8PK01': os.path.join(DOLS_DIR, 'extracted_spm_kor', 'sys', 'main.dol'),
-}
-
-# Fallback: check flat DOL names
-for r, p in list(DOL_PATHS.items()):
-    if not os.path.exists(p):
-        flat = os.path.join(DOLS_DIR, f'{r}.dol')
-        if os.path.exists(flat):
-            DOL_PATHS[r] = flat
+# one flat <key>.dol per release (keys are in tools/regions.py)
+DOL_PATHS = {r: os.path.join(DOLS_DIR, '%s.dol' % r) for r in REGIONS}
 
 out_dir = os.path.join(HERE, 'prebuilt')
 os.makedirs(out_dir, exist_ok=True)
 
 # Set USA reference DOL for gen_gc
-usa_dol = Dol(DOL_PATHS['R8PE01'])
+usa_dol = Dol(DOL_PATHS['R8PE01r2'])
 gen_gc.USA_DOL = usa_dol
 
 for region in REGIONS:

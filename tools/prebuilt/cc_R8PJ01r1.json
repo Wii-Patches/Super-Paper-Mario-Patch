@@ -1,7 +1,7 @@
 {
   "feature": "cc",
   "title": "Classic Controller",
-  "region": "R8PJ01",
+  "region": "R8PJ01r1",
   "ops": [
     {
       "t": "patch",

@@ -1,6 +1,6 @@
 """Find the Super Paper Mario addresses the GameCube-pad patch needs in any revision.
 
-Everything is written once against USA Rev 2 (R8PE01); the other discs share
+Everything is written once against USA Rev 2 (R8PE01r2); the other discs share
 the same compiled code at other addresses. A function is located by matching
 a window of USA instructions against the target DOL with the relocatable bits
 (branch displacements, address halves, small-data offsets) masked out, and it

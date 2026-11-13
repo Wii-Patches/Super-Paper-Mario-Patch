@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Emit the Gecko code lists and Riivolution XML from the prebuilt features.
 
-    python3 tools/build.py            # writes codes/<ID>.ini, codes/<ID>.txt, riivolution/<ID>.xml
+    python3 tools/build.py            # writes codes/<key>.ini, codes/<key>.txt, riivolution/<key>.xml
 """
 import os
 import sys
@@ -45,7 +45,7 @@ def gecko_ini(region):
         f = features.load(name, region)
         lines.append('$%s' % f.title)
         lines.append('*By %s' % CREDIT[name])
-        lines.append('*%s (%s)' % (REGIONS[region]['label'], region))
+        lines.append('*%s (%s)' % (REGIONS[region]['label'], REGIONS[region]['id']))
         lines += ['*' + b for b in BLURB[name]]
         lines += COMBINED_WARNING if any(hasattr(o, 'data') or hasattr(o, 'payload') for o in f.ops) else []
         lines += f.gecko_lines()
@@ -57,7 +57,7 @@ def riivolution_xml(region):
     out = [
         '<!-- %s: Classic Controller codes by Vague Rant & crediar, GameCube bridge by quatric -->' % r['label'],
         '<wiidisc version="1" root="/">',
-        '  <id game="%s" version="%d" />' % (region, r['version']),
+        '  <id game="%s"%s />' % (r['id'], ' version="%d"' % r['revs'][0] if len(r['revs']) == 1 else ''),
         '  <options>',
         '    <section name="%s">' % r['label'],
     ]

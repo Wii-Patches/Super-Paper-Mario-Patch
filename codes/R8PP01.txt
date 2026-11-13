@@ -1,6 +1,6 @@
 $Classic Controller
 *By Vague Rant, crediar and quatric
-*Super Paper Mario (Europe Rev 1) (R8PP01)
+*Super Paper Mario (Europe Rev 0 and Rev 1) (R8PP01)
 *Play Super Paper Mario with a Classic Controller.
 *Left Stick moves, Right Stick / L toggles and aims pointer.
 *A jumps/confirms, B Pixl/cancel, Y flips 2D/3D, X menu, L pointer mode, R inspect.
@@ -107,7 +107,7 @@ C22E1BA4 00000023
 4E800020 00000000
 $GameCube controller
 *By quatric (bridged to Vague Rant CC hooks)
-*Super Paper Mario (Europe Rev 1) (R8PP01)
+*Super Paper Mario (Europe Rev 0 and Rev 1) (R8PP01)
 *Play Super Paper Mario with a GameCube controller in port 1.
 *Control stick moves, C-Stick / L toggles and aims pointer.
 *A jumps/confirms, B Pixl/cancel, Y flips 2D/3D, X menu, L pointer mode, R inspect, Start pauses, Z controls.

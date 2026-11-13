@@ -1,6 +1,6 @@
 # Super Paper Mario Patch
 
-Play **Super Paper Mario** (Wii) with a **GameCube controller** or a **Classic Controller**! Works across all four regional releases: USA Rev 2 (`R8PE01`), Europe Rev 1 (`R8PP01`), Japan Rev 1 (`R8PJ01`), and Korea (`R8PK01`).
+Play **Super Paper Mario** (Wii) with a **GameCube controller** or a **Classic Controller**! Works with **every retail release** of the game: USA Rev 0/1/2, Europe Rev 0/1, Japan Rev 0/1, and Korea.
 
 The patches are applied directly to your own clean disc image (`.wbfs` or `.iso`): drop your copy onto the patcher window and play the result on a Wii (USB loader) or in Dolphin. Nothing copyrighted from the game is distributed in this repository.
 
@@ -14,10 +14,10 @@ The patches are applied directly to your own clean disc image (`.wbfs` or `.iso`
   - Control stick (or CC left stick): Character movement and crouching.
   - C-stick (or CC right stick): Smooth Tippi pointer aiming.
   - Dedicated pointer toggle: Press **L** (or CC L/ZL) to toggle Tippi pointer mode on and off cleanly without holding buttons!
-- **All 4 Regional Releases Supported**:
-  - `R8PE01`: *Super Paper Mario* (USA Rev 2)
-  - `R8PP01`: *Super Paper Mario* (Europe Rev 1)
-  - `R8PJ01`: *Super Paper Mario* (Japan Rev 1)
+- **Every Retail Release Supported**:
+  - `R8PE01`: *Super Paper Mario* (USA Rev 0, Rev 1 and Rev 2)
+  - `R8PP01`: *Super Paper Mario* (Europe Rev 0 and Rev 1)
+  - `R8PJ01`: *Super Paper Mario* (Japan Rev 0 and Rev 1)
   - `R8PK01`: *Super Paper Mario* (Korea)
 
 ---
@@ -88,21 +88,23 @@ python3 tools/patcher.py main.dol main_patched.dol --cc --gc
 
 ### Gecko Codes (Dolphin)
 
-Pre-generated Gecko codes for each game ID are located in the `codes/` directory:
-- `R8PE01.ini` / `R8PE01.txt` (USA Rev 2)
-- `R8PP01.ini` / `R8PP01.txt` (Europe Rev 1)
-- `R8PJ01.ini` / `R8PJ01.txt` (Japan Rev 1)
-- `R8PK01.ini` / `R8PK01.txt` (Korea)
+Pre-generated Gecko codes live in `codes/`, one set per distinct executable:
 
-Copy the `.ini` file into Dolphin's `Sys/GameSettings/` or your user `GameSettings/` folder.
+| File | Game |
+| --- | --- |
+| `R8PE01r0.ini` / `.txt` | USA Rev 0 |
+| `R8PE01r1.ini` / `.txt` | USA Rev 1 |
+| `R8PE01r2.ini` / `.txt` | USA Rev 2 |
+| `R8PP01.ini` / `.txt` | Europe Rev 0 and Rev 1 (identical executables) |
+| `R8PJ01r0.ini` / `.txt` | Japan Rev 0 |
+| `R8PJ01r1.ini` / `.txt` | Japan Rev 1 |
+| `R8PK01.ini` / `.txt` | Korea |
+
+Copy the matching `.ini` into Dolphin's `Sys/GameSettings/` or your user `GameSettings/` folder. The `r<N>` suffix is Dolphin's revision-specific naming, so each file only loads for its own revision. Check your disc's revision under *Properties → Info* if unsure.
 
 ### Riivolution
 
-XML patches are provided in `riivolution/`:
-- `R8PE01.xml`
-- `R8PP01.xml`
-- `R8PJ01.xml`
-- `R8PK01.xml`
+XML patches are provided in `riivolution/`, named like the Gecko files (`R8PE01r0.xml`, `R8PE01r1.xml`, `R8PE01r2.xml`, `R8PP01.xml`, `R8PJ01r0.xml`, `R8PJ01r1.xml`, `R8PK01.xml`).
 
 Place the XML file in `/riivolution/` on your SD card or USB drive.
 

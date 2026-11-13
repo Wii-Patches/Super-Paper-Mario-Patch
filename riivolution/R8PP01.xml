@@ -1,8 +1,8 @@
-<!-- Super Paper Mario (Europe Rev 1): Classic Controller codes by Vague Rant & crediar, GameCube bridge by quatric -->
+<!-- Super Paper Mario (Europe Rev 0 and Rev 1): Classic Controller codes by Vague Rant & crediar, GameCube bridge by quatric -->
 <wiidisc version="1" root="/">
-  <id game="R8PP01" version="1" />
+  <id game="R8PP01" />
   <options>
-    <section name="Super Paper Mario (Europe Rev 1)">
+    <section name="Super Paper Mario (Europe Rev 0 and Rev 1)">
       <option name="Classic Controller" default="0">
         <choice name="Enabled"><patch id="cc" /></choice>
       </option>

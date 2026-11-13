@@ -42,7 +42,7 @@ def compile_hook(name, defs):
 def build(region, dol):
     global USA_DOL
     if USA_DOL is None:
-        USA_DOL = dol if region == 'R8PE01' else None
+        USA_DOL = dol if region == 'R8PE01r2' else None
 
     # resolve addresses using USA reference DOL
     a = anchors.resolve(USA_DOL if USA_DOL is not None else dol, dol)
