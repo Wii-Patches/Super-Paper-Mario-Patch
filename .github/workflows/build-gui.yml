@@ -94,7 +94,7 @@ jobs:
             $BINS --distpath pyinst_dist tools/gui.py
           cp wit-gpl-2.0.txt "pyinst_dist/Super-Paper-Mario-Patcher.app/Contents/Resources/wit-gpl-2.0.txt"
           cd pyinst_dist
-          zip -qr "../Super-Paper-Mario-Patch-${{ matrix.target }}.zip" Super-Paper-Mario-Patcher.app
+          zip -qr "../Super-Paper-Mario-ISO-Patcher-${{ matrix.target }}.zip" Super-Paper-Mario-Patcher.app
 
       - name: Build app (Linux)
         if: matrix.target == 'linux-x86_64'
@@ -107,7 +107,7 @@ jobs:
             $BINS --distpath pyinst_dist tools/gui.py
           cp wit-gpl-2.0.txt pyinst_dist/Super-Paper-Mario-Patcher/
           cd pyinst_dist
-          tar -czf "../Super-Paper-Mario-Patch-${{ matrix.target }}.tar.gz" Super-Paper-Mario-Patcher
+          tar -czf "../Super-Paper-Mario-ISO-Patcher-${{ matrix.target }}.tar.gz" Super-Paper-Mario-Patcher
 
       - name: Build app (Windows)
         if: matrix.target == 'windows-x86_64'
@@ -122,19 +122,19 @@ jobs:
             $BINS --distpath pyinst_dist tools/gui.py
           cp wit-gpl-2.0.txt pyinst_dist/Super-Paper-Mario-Patcher/
           cd pyinst_dist
-          7z a "../Super-Paper-Mario-Patch-${{ matrix.target }}.zip" Super-Paper-Mario-Patcher \
-            || powershell -Command "Compress-Archive -Path Super-Paper-Mario-Patcher -DestinationPath ../Super-Paper-Mario-Patch-${{ matrix.target }}.zip"
+          7z a "../Super-Paper-Mario-ISO-Patcher-${{ matrix.target }}.zip" Super-Paper-Mario-Patcher \
+            || powershell -Command "Compress-Archive -Path Super-Paper-Mario-Patcher -DestinationPath ../Super-Paper-Mario-ISO-Patcher-${{ matrix.target }}.zip"
 
       - uses: actions/upload-artifact@v4
         with:
-          name: Super-Paper-Mario-Patch-${{ matrix.target }}
-          path: Super-Paper-Mario-Patch-${{ matrix.target }}.*
+          name: Super-Paper-Mario-ISO-Patcher-${{ matrix.target }}
+          path: Super-Paper-Mario-ISO-Patcher-${{ matrix.target }}.*
 
       - name: Attach to release
         if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
         with:
-          files: Super-Paper-Mario-Patch-${{ matrix.target }}.*
+          files: Super-Paper-Mario-ISO-Patcher-${{ matrix.target }}.*
 
   patch-files:
     needs: check
