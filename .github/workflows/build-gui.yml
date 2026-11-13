@@ -135,33 +135,3 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: Super-Paper-Mario-ISO-Patcher-${{ matrix.target }}.*
-
-  patch-files:
-    needs: check
-    runs-on: ubuntu-22.04
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Zip Gecko codes
-        run: zip -qr Super-Paper-Mario-Patch-Gecko-Codes.zip codes
-
-      - name: Zip Riivolution patches
-        run: zip -qr Super-Paper-Mario-Patch-Riivolution.zip riivolution
-
-      - uses: actions/upload-artifact@v4
-        with:
-          name: Super-Paper-Mario-Patch-Gecko-Codes
-          path: Super-Paper-Mario-Patch-Gecko-Codes.zip
-
-      - uses: actions/upload-artifact@v4
-        with:
-          name: Super-Paper-Mario-Patch-Riivolution
-          path: Super-Paper-Mario-Patch-Riivolution.zip
-
-      - name: Attach to release
-        if: startsWith(github.ref, 'refs/tags/')
-        uses: softprops/action-gh-release@v2
-        with:
-          files: |
-            Super-Paper-Mario-Patch-Gecko-Codes.zip
-            Super-Paper-Mario-Patch-Riivolution.zip
